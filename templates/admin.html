@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container" style="max-width: 800px; width: 90%;"> 
+        <h2>Admin Dashboard</h2>
+        
+        <form action="/add_task" method="POST">
+            <input type="text" name="title" placeholder="What needs to be done?" required>
+            
+            <input type="date" name="due_date" id="task_date" required>
+            
+            <select name="assigned_to">
+                <option value="" disabled selected>Assign to User...</option>
+                {% for user in users %}
+                <option value="{{ user.username }}">{{ user.username }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Assign Task</button>
+        </form>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Assigned To</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.assigned_to }}</td>
+                    <td>{{ task.due_date }}</td>
+                    <td>{{ task.status }}</td>
+                    <td><a href="/delete_task/{{ task.id }}" style="color:red; font-weight:bold; text-decoration:none;" onclick="return confirm('Are you sure?')">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <p style="text-align:center; margin-top:20px;"><a href="/logout" style="color: #dc3545;">Logout</a></p>
+    </div>
+
+    <script>
+        // Aajako date (local time zone) nikalne
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        
+        // Calendar ko minimum date set garne
+        document.getElementById('task_date').setAttribute('min', today);
+    </script>
+</body>
+</html>

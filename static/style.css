@@ -1,0 +1,183 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Headings */
+h1, h2 { 
+    color: #333; 
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 14px;
+}
+
+/* Primary Buttons */
+button, .btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+button:hover { background-color: #0056b3; }
+
+/* Welcome Page Specific Green Button */
+.btn-welcome {
+    background-color: #28a745;
+    max-width: 200px;
+    margin-top: 20px;
+}
+
+.btn-welcome:hover { background-color: #218838; }
+
+/* Table Styling */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 30px; 
+    background: #fff;
+}
+
+th, td { 
+    padding: 15px; 
+    border-bottom: 1px solid #eee; 
+    text-align: left; 
+}
+
+th { 
+    background-color: #f8f9fa; 
+    color: #333; 
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+tr:hover { background-color: #fcfcfc; }
+
+/* Delete Link Styling */
+.delete-link {
+    color: #dc3545;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.delete-link:hover {
+    background-color: #dc3545;
+    color: white !important;
+}
+
+/* Status Labels */
+td:contains("Completed") {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Logout Link */
+.logout-btn {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logout-btn:hover { text-decoration: underline; color: #dc3545; }
+
+.welcome-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f4f7f6; /* Background color ali light */
+}
+
+.welcome-card {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+.welcome-card h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+}
+
+.description {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.footer-text {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #bdc3c7;
+}
